@@ -1,0 +1,386 @@
+.artist-search {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.artist-search h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #1DB954;
+  text-align: center;
+}
+
+.artist-search form {
+  display: flex;
+  margin-bottom: 2.5rem;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-search input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #282828;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.artist-search input:focus {
+  outline: none;
+  background-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.artist-search button[type="submit"] {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.artist-search button[type="submit"]:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.artist-card {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.artist-card:hover {
+  background-color: #282828;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.artist-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 2px solid #1DB954;
+}
+
+.artist-card h3 {
+  margin: 1rem 1rem 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist-card p {
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+.artist-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1DB954, #1ed760);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover::after {
+  transform: scaleX(1);
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.no-results p {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+}
+
+.search-tips {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.search-tips h3 {
+  color: #1DB954;
+  margin-bottom: 1rem;
+}
+
+.search-tips ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-tips li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-tips li:before {
+  content: "•";
+  color: #1DB954;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Add a loading animation for artist cards */
+.artist-card-skeleton {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 280px;
+  position: relative;
+}
+
+.artist-card-skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05) 25%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Add a welcome message for first-time users */
+.welcome-message {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-message h3 {
+  font-size: 1.8rem;
+  color: #1DB954;
+  margin-bottom: 1rem;
+}
+
+.welcome-message p {
+  font-size: 1.1rem;
+  color: #b3b3b3;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Popular artists suggestions */
+.popular-artists {
+  margin-top: 3rem;
+}
+
+.popular-artists h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.popular-artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.popular-artist-item {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.popular-artist-item:hover {
+  background-color: #282828;
+  transform: translateY(-3px);
+}
+
+.popular-artist-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 2px solid #1DB954;
+}
+
+.popular-artist-item p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Update the CSS for recent artists */
+.recent-artists {
+  margin-top: 3rem;
+}
+
+.recent-artists h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.recent-artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.recent-artist-item {
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.recent-artist-item:hover {
+  background-color: #282828;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.recent-artist-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-bottom: 2px solid #1DB954;
+}
+
+.recent-artist-item p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: white;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-artist-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1DB954, #1ed760);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.recent-artist-item:hover::after {
+  transform: scaleX(1);
+}
+
+.no-recent-artists {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.no-recent-artists p {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+}
+
+/* Add styles for the recent artists header with clear button */
+.recent-artists-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.recent-artists-header h3 {
+  margin-bottom: 0;
+}
+
+.clear-history-button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  color: #b3b3b3;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  border-radius: 4px;
+}
+
+.clear-history-button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.recent-artists:hover .clear-history-button {
+  opacity: 0.8;
+} 

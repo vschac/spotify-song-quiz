@@ -1,0 +1,1151 @@
+.quiz {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.quiz-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.quiz-progress {
+  margin-left: auto;
+}
+
+.back-button {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #b3b3b3;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.back-button:hover {
+  background-color: #333;
+  color: #ffffff;
+  opacity: 1;
+  border-color: #555;
+}
+
+.back-button:active {
+  transform: translateY(1px);
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1DB954;
+}
+
+.quiz-content {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.player-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.play-button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s;
+}
+
+.play-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+}
+
+.hint {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.album-cover {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.hint-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hint-button:hover {
+  background-color: #444;
+}
+
+.guess-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-mode-toggle {
+  margin-bottom: 1.5rem;
+}
+
+.mode-button {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mode-button:hover {
+  background-color: #333;
+}
+
+.multiple-choice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.multiple-choice button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.multiple-choice button:hover:not([disabled]) {
+  background-color: #444;
+}
+
+.multiple-choice button.correct {
+  background-color: #1DB954;
+}
+
+.multiple-choice button.wrong {
+  background-color: #e74c3c;
+}
+
+.text-input {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.text-input input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.text-input button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #1DB954;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.result-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.result-album {
+  flex-shrink: 0;
+}
+
+.result-album-cover {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result-text {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.result-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.song-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.album-name {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.result.correct {
+  background-color: rgba(29, 185, 84, 0.15);
+  border: 2px solid #1DB954;
+}
+
+.result.incorrect {
+  background-color: rgba(231, 76, 60, 0.15);
+  border: 2px solid #e74c3c;
+}
+
+.next-button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(29, 185, 84, 0.4);
+  background-color: #1ed760;
+}
+
+.next-button:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
+}
+
+.next-button::after {
+  content: '→';
+  margin-left: 8px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover::after {
+  transform: translateX(4px);
+}
+
+@keyframes nextButtonPulse {
+  0% { box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3); }
+  50% { box-shadow: 0 4px 18px rgba(29, 185, 84, 0.5); }
+  100% { box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3); }
+}
+
+.result.correct .next-button {
+  animation: nextButtonPulse 2s infinite;
+}
+
+.quiz-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #121212;
+  border-radius: 10px;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.quiz-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1DB954;
+}
+
+.quiz-intro p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.quiz-intro .artist-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-intro .artist-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid #1DB954;
+}
+
+.quiz-intro .button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.start-button {
+  background-color: #1DB954;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+  background-color: transparent;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.quiz-details {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.quiz-details h3 {
+  margin-bottom: 0.5rem;
+  color: #1DB954;
+}
+
+.quiz-details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quiz-details li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.quiz-details li:before {
+  content: "•";
+  color: #1DB954;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Improve the loading animation for the play button */
+.play-button.loading {
+  position: relative;
+  background-color: #333;
+  color: transparent;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.play-button.loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 185, 84, 0.1) 0%,
+    rgba(29, 185, 84, 0.2) 25%,
+    rgba(29, 185, 84, 0.3) 50%,
+    rgba(29, 185, 84, 0.2) 75%,
+    rgba(29, 185, 84, 0.1) 100%
+  );
+  animation: shimmer 1.5s infinite linear;
+}
+
+.play-button.loading::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #1DB954;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(33.33%);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Update the loading overlay to be more responsive */
+.quiz-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 18, 18, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.quiz-loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #1DB954;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.quiz-loading-text {
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Add a pulsing animation for the play button when it's ready to be clicked */
+.play-button:not(.loading):not(:disabled) {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(29, 185, 84, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
+  }
+}
+
+/* Improve the styling for the playback issue message */
+.playback-issue-message {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  text-align: center;
+  max-width: 400px;
+  border-left: 3px solid #1DB954;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Add a transition for the hint section */
+.hint {
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add a loading state for the album cover */
+.album-cover.loading {
+  position: relative;
+  background-color: #333;
+}
+
+.album-cover.loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05) 25%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Debug panel - remove in production */
+.debug-panel {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.debug-panel h4 {
+  margin-top: 0;
+  color: #ff9800;
+}
+
+.debug-panel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.debug-panel li {
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+
+.debug-panel strong {
+  color: #ff9800;
+  margin-right: 0.5rem;
+}
+
+/* Add styling for the fallback button */
+.fallback-button {
+  margin-top: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.fallback-button:hover {
+  background-color: #444;
+}
+
+/* Add styling for fallback mode */
+.play-button.fallback {
+  background-color: #666;
+  cursor: not-allowed;
+  animation: none;
+  transform: none;
+}
+
+.play-button.fallback:hover {
+  background-color: #666;
+  transform: none;
+}
+
+.fallback-hint {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
+}
+
+.fallback-hint p {
+  margin: 0.5rem 0;
+  color: #ddd;
+}
+
+.fallback-hint strong {
+  color: #ff9800;
+}
+
+/* Add a gradient background to the quiz container */
+.quiz-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  background-color: rgba(18, 18, 18, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Add a subtle animated pattern overlay */
+.quiz-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(29, 185, 84, 0.05) 1%, transparent 5%),
+    radial-gradient(circle at 75% 75%, rgba(29, 185, 84, 0.05) 1%, transparent 5%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  z-index: 0;
+  animation: patternMove 120s linear infinite;
+}
+
+@keyframes patternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Make the quiz content appear above the pattern */
+.quiz-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a glow effect to the play button */
+.play-button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(29, 185, 84, 0.5);
+}
+
+.play-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shimmerButton 3s infinite;
+}
+
+@keyframes shimmerButton {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Add a bounce animation to correct answers */
+.result.correct {
+  animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Add a shake animation to incorrect answers */
+.result.incorrect {
+  animation: shakeX 0.8s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Add a floating animation to the album cover */
+.album-cover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Add a music note particle effect when playing */
+.player-section {
+  position: relative;
+}
+
+.play-button:not(.loading):not(:disabled):not(.fallback) {
+  animation: pulse 2s infinite, musicNotes 10s linear infinite;
+}
+
+@keyframes musicNotes {
+  0%, 100% { background-color: #1DB954; }
+  25% { background-color: #1ed760; }
+  50% { background-color: #1DB954; }
+  75% { background-color: #19a449; }
+}
+
+/* Add a fun hover effect to multiple choice buttons */
+.multiple-choice button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.multiple-choice button:hover:not([disabled]) {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.multiple-choice button:active:not([disabled]) {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Add styles for the quiz settings */
+.quiz-settings {
+  margin: 1.5rem 0;
+}
+
+.settings-toggle {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.settings-toggle:hover {
+  background-color: #333;
+}
+
+.settings-panel {
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.setting-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.setting-item:last-child {
+  margin-bottom: 0;
+}
+
+.setting-item label {
+  margin-right: 1rem;
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.setting-item input[type="number"] {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 80px;
+  font-size: 1rem;
+}
+
+.setting-item select {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.setting-hint {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+  flex-basis: 100%;
+  margin-top: 0.3rem;
+  margin-left: 120px;
+}
+
+/* Add styles for the timer */
+.quiz-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1DB954;
+  margin-top: 0.5rem;
+}
+
+/* Update the best time display to fit the card width better */
+.best-time-display {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.best-time-badge {
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.15) 0%, rgba(29, 185, 84, 0.3) 100%);
+  border: 2px solid rgba(29, 185, 84, 0.5);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  justify-content: space-between;
+}
+
+.best-time-left {
+  display: flex;
+  align-items: center;
+}
+
+.best-time-clock {
+  margin-right: 1rem;
+}
+
+.best-time-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.best-time-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1DB954;
+}
+
+.best-time-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1DB954;
+  line-height: 1;
+}
+
+.best-time-details {
+  font-size: 0.75rem;
+  color: #e0e0e0;
+}
+
+.best-time-date {
+  font-size: 0.65rem;
+  color: #b3b3b3;
+}
+
+/* Add a subtle pulse animation to the best time badge */
+@keyframes bestTimePulse {
+  0% { box-shadow: 0 4px 12px rgba(29, 185, 84, 0.2); }
+  50% { box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4); }
+  100% { box-shadow: 0 4px 12px rgba(29, 185, 84, 0.2); }
+}
+
+.best-time-badge {
+  animation: fadeIn 0.5s ease-in-out, bestTimePulse 3s infinite;
+}
+
+/* Remove the duplicate gradient line under the quiz header */
+.quiz-header::after {
+  content: none; /* This removes the pseudo-element */
+}
+
+/* Keep the border for visual separation but without the gradient */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* Update the correct/incorrect answer banner styling for more vibrancy */
+.answer-feedback {
+  background: rgba(18, 18, 18, 0.95);
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin: 0.5rem 0 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.answer-feedback.correct {
+  background-color: rgba(29, 185, 84, 0.2);
+  border-left: 4px solid #1DB954;
+  animation: correctAnswer 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.answer-feedback.incorrect {
+  background-color: rgba(230, 30, 50, 0.2);
+  border-left: 4px solid #E61E32;
+  animation: incorrectAnswer 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* Remove the confetti effect for correct answers */
+.answer-feedback.correct::before {
+  content: none; /* This removes the pseudo-element */
+}
+
+/* Add a shake effect for incorrect answers */
+@keyframes incorrectAnswer {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Add a bounce effect for correct answers */
+@keyframes correctAnswer {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Animation for confetti */
+@keyframes confettiAppear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Make the content appear above the effects */
+.answer-feedback-album,
+.answer-feedback-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a pulse effect to the Next Song button */
+.next-song-button {
+  animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.next-song-button:hover {
+  animation: none;
+  background-color: #1ed760;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .answer-feedback {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .answer-feedback-album {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .answer-feedback-content {
+    text-align: center;
+  }
+  
+  .next-song-button {
+    align-self: center;
+  }
+}
+
+/* Add back the missing styles for the answer feedback elements */
+.answer-feedback-album {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+  margin-right: 1.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.answer-feedback h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.answer-feedback.correct h3 {
+  color: #1DB954;
+}
+
+.answer-feedback.incorrect h3 {
+  color: #E61E32;
+}
+
+.answer-feedback-content {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.answer-feedback-song {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.answer-feedback-album-name {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-song-button {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  animation: pulseButton 2s infinite;
+}
+
+.next-song-button:active {
+  transform: translateY(0);
+} 

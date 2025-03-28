@@ -1,0 +1,204 @@
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.dashboard-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 250px;
+  height: 2px;
+  background: linear-gradient(90deg, #1DB954, transparent 90%);
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #b3b3b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  border: 2px solid #1DB954;
+}
+
+.user-info span {
+  font-weight: 500;
+  color: #fff;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(29, 185, 84, 0.1);
+  border-radius: 50%;
+  border-top-color: #1DB954;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+.loading-overlay p {
+  color: white;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Update the How to Play button to better match the design */
+.how-to-play-container {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  z-index: 10;
+}
+
+.how-to-play-trigger {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.how-to-play-icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+.how-to-play-text {
+  color: #b3b3b3;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.how-to-play-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+.how-to-play-trigger:hover .how-to-play-icon,
+.how-to-play-trigger:hover .how-to-play-text {
+  color: #1DB954;
+}
+
+.how-to-play-content {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 450px;
+  background: rgba(18, 18, 18, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.how-to-play-container:hover .how-to-play-content,
+.how-to-play-container:focus-within .how-to-play-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Keep the existing styles for the setup steps */
+.how-to-play-content h3 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+/* Add a subtle arrow pointing to the trigger */
+.how-to-play-content::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  background: rgba(18, 18, 18, 0.95);
+  transform: rotate(45deg);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add responsive styles for mobile */
+@media (max-width: 768px) {
+  .how-to-play-content {
+    width: 300px;
+    left: -50px; /* Adjust position for smaller screens */
+  }
+  
+  .how-to-play-content::before {
+    left: 70px; /* Adjust arrow position for smaller screens */
+  }
+} 
