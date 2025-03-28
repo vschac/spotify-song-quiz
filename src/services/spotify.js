@@ -2,9 +2,10 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 const spotifyApi = new SpotifyWebApi();
 
-// Authentication constants
-const clientId = process.env.SPOTIFY_CLIENT_ID;
-const redirectUri = process.env.SPOTIFY_REDIRECT_URI
+// Hardcode values for GitHub Pages deployment
+const clientId = 'f4575024ea9045309a9b8790c2934230'; // Your client ID
+const redirectUri = 'https://vschac.github.io/spotify-song-quiz/callback';
+
 const scopes = [
   'user-read-private',
   'user-read-email',

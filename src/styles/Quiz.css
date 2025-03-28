@@ -82,11 +82,46 @@
   cursor: pointer;
   margin-bottom: 1.5rem;
   transition: all 0.3s;
+  min-width: 120px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .play-button:hover {
   background-color: #1ed760;
   transform: scale(1.05);
+}
+
+.play-button.loading {
+  background-color: #1DB954;
+  cursor: wait;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  height: 48px;
+}
+
+.play-button.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hint {

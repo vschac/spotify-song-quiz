@@ -1,40 +1,30 @@
 .login {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #121212 0%, #181818 100%);
+  width: 100%;
+  background-color: #121212;
+  color: white;
   position: relative;
-  overflow: hidden;
 }
 
-/* Add animated music notes background */
+/* Remove the background animation completely */
 .login::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(29, 185, 84, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(29, 185, 84, 0.05) 0%, transparent 50%);
-  z-index: 0;
+  content: none;
 }
 
 .login-content {
+  max-width: 500px;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(18, 18, 18, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 500px;
-  padding: 2rem;
-  background: rgba(18, 18, 18, 0.7);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  animation: fadeIn 1s ease-out;
 }
 
 .logo {
@@ -46,69 +36,44 @@
 .login h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #1DB954, #1ed760);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1DB954;
 }
 
 .login p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   color: #b3b3b3;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .login-button {
+  display: inline-block;
   background-color: #1DB954;
   color: white;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem;
   border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
   font-size: 1.1rem;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
   position: relative;
-  overflow: hidden;
-  display: inline-block;
 }
 
 .login-button:hover {
   background-color: #1ed760;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 18px rgba(29, 185, 84, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
 }
 
 .login-button:active {
-  transform: translateY(0) scale(1);
-  box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
+  transform: translateY(0);
 }
 
+/* Remove the shimmer effect */
 .login-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(45deg);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  content: none;
 }
 
 /* Add a footer with Spotify branding */
@@ -127,4 +92,20 @@
 
 .login-footer a:hover {
   text-decoration: underline;
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .login-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  
+  .login h1 {
+    font-size: 2rem;
+  }
+  
+  .login p {
+    font-size: 1rem;
+  }
 } 
