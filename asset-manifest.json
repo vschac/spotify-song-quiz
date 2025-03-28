@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/spotify-song-quiz/static/css/main.3de2532f.css",
+    "main.js": "/spotify-song-quiz/static/js/main.37d63016.js",
+    "index.html": "/spotify-song-quiz/index.html",
+    "main.3de2532f.css.map": "/spotify-song-quiz/static/css/main.3de2532f.css.map",
+    "main.37d63016.js.map": "/spotify-song-quiz/static/js/main.37d63016.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3de2532f.css",
+    "static/js/main.37d63016.js"
+  ]
+}
