@@ -1,3 +1,5 @@
+Disclaimer: This project was largely written by AI with the intention of getting a working product as quickly as possible for personal use.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
