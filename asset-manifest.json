@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/spotify-song-quiz/static/css/main.3de2532f.css",
-    "main.js": "/spotify-song-quiz/static/js/main.e5f15905.js",
+    "main.css": "/spotify-song-quiz/static/css/main.f5c01ca5.css",
+    "main.js": "/spotify-song-quiz/static/js/main.a90d578e.js",
     "index.html": "/spotify-song-quiz/index.html",
-    "main.3de2532f.css.map": "/spotify-song-quiz/static/css/main.3de2532f.css.map",
-    "main.e5f15905.js.map": "/spotify-song-quiz/static/js/main.e5f15905.js.map"
+    "main.f5c01ca5.css.map": "/spotify-song-quiz/static/css/main.f5c01ca5.css.map",
+    "main.a90d578e.js.map": "/spotify-song-quiz/static/js/main.a90d578e.js.map"
   },
   "entrypoints": [
-    "static/css/main.3de2532f.css",
-    "static/js/main.e5f15905.js"
+    "static/css/main.f5c01ca5.css",
+    "static/js/main.a90d578e.js"
   ]
 }
